@@ -72,7 +72,7 @@ void Accounts::new_Account() {
     cout<<"\nStudent ID: ";cin>>std_id;
     cout<<"\nWhat is your major: "<<endl;cin>>std_major;
     //Save user info into text file
-    ofstream userName("A_username.txt",ios::app);//ios::app wont delete/overwrite last entry
+    ofstream userName("A_username.txt",ios::app);//ios::app allow to add input to txt
     if(userName.is_open()){
         userName << "Name:" << first_name << " " << last_name << " " << "|Age: " << std_age << " " << "|Student ID: "
         << std_id << " "<< "|Major: " << std_major << endl;
