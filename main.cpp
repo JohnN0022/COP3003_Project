@@ -91,7 +91,28 @@ void Accounts::input_number() {
 }
 
 void Accounts::sign_in_Account() {
-
+    int loginID = 0;
+    int loginAttempt = 0;
+    char loginLastName[50];
+    cout << "\nSign-In Page" << endl;  
+    
+    cout << "\nPlease Enter Student Last Name: ";
+    cin >> loginLastName;
+  
+    cout << "\nPlease Enter Student ID: ";
+    cin >> loginID;
+    if (loginID == std_id){
+	    cout << "\nWelcome back " << name << " !" << endl;
+	    display_std();
+    }
+    else {
+	    cout << "\nEntered ID does not match any ID in the database, please try again" << end;
+	    loginAttempt ++;
+    }
+    if (loginAttempt >= 5){
+	    cout << "\nIf ID was forgotten please go to lost password page" << endl;
+	    menu();	
+   }
 }
 void Accounts::lost_password() {
 
