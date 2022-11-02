@@ -119,7 +119,29 @@ void Accounts::sign_in_Account() {
    }
 }
 void Accounts::lost_password() {
-
+	int answer = 0;
+	int new_stdID;
+	Cout << "\nWelcome to the Lost Password Page";
+	cout << "Would you like to renew Student ID: "
+	cout << "\n 1. Yes";
+	cout << "\n 2. No";	
+	cin >> answer;
+	if (answer == 1){
+		cout << "You have chosen to renew Student ID" << end;
+		cout << "Please Enter Student Last and First Name" << end;
+		cout << "\n First Name: ";
+		cin >> first_Name;
+		cout << "\n Last Name: ";
+		cin >> last_Name;
+		if (first_Name && last_Name == student.first_Name && student.last_Name){
+			cout << "Enter new Student ID: ";
+			cin >> std_id = new_stdID;
+		}	
+		else
+ 			cout << "Entered student name not in database" << endl;
+	}
+	else 
+		cout << "You have chosen to not renew password" << endl;
 }
 int main() {
     Accounts info;
