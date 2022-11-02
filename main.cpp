@@ -94,11 +94,13 @@ void Accounts::sign_in_Account() {
     int loginID = 0;
     int loginAttempt = 0;
     char loginLastName[50];
-    cout << "\nSign-In Page" << endl;  
     
+    cout << "\nSign-In Page" << endl;  
+   
     cout << "\nPlease Enter Student Last Name: ";
     cin >> loginLastName;
   
+    // Asks for students ID to sign in
     cout << "\nPlease Enter Student ID: ";
     cin >> loginID;
     if (loginID == std_id){
@@ -109,9 +111,11 @@ void Accounts::sign_in_Account() {
 	    cout << "\nEntered ID does not match any ID in the database, please try again" << end;
 	    loginAttempt ++;
     }
+    
+    // If the user enters a wrong student ID too many times, sends them to Menu
     if (loginAttempt >= 5){
 	    cout << "\nIf ID was forgotten please go to lost password page" << endl;
-	    menu();	
+	    Menu();	
    }
 }
 void Accounts::lost_password() {
