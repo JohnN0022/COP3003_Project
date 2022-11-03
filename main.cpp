@@ -94,54 +94,54 @@ void Accounts::sign_in_Account() {
     int loginID = 0;
     int loginAttempt = 0;
     char loginLastName[50];
-    
-    cout << "\nSign-In Page" << endl;  
-   
+
+    cout << "\nSign-In Page" << endl;
+
     cout << "\nPlease Enter Student Last Name: ";
     cin >> loginLastName;
-  
+
     // Asks for students ID to sign in
     cout << "\nPlease Enter Student ID: ";
     cin >> loginID;
     if (loginID == std_id){
-	    cout << "\nWelcome back " << name << " !" << endl;
-	    display_std();
+        cout << "\nWelcome back " << first_name << " " << last_name << " !" << endl;
+        display_std();
     }
     else {
-	    cout << "\nEntered ID does not match any ID in the database, please try again" << end;
-	    loginAttempt ++;
+        cout << "\nEntered ID does not match any ID in the database, please try again" << endl;
+        loginAttempt ++;
     }
-    
+
     // If the user enters a wrong student ID too many times, sends them to Menu
     if (loginAttempt >= 5){
-	    cout << "\nIf ID was forgotten please go to lost password page" << endl;
-	    Menu();	
-   }
+        cout << "\nIf ID was forgotten please go to lost password page" << endl;
+        Menu();
+    }
 }
 void Accounts::lost_password() {
-	int answer = 0;
-	int new_stdID;
-	Cout << "\nWelcome to the Lost Password Page";
-	cout << "Would you like to renew Student ID: "
-	cout << "\n 1. Yes";
-	cout << "\n 2. No";	
-	cin >> answer;
-	if (answer == 1){
-		cout << "You have chosen to renew Student ID" << end;
-		cout << "Please Enter Student Last and First Name" << end;
-		cout << "\n First Name: ";
-		cin >> first_Name;
-		cout << "\n Last Name: ";
-		cin >> last_Name;
-		if (first_Name && last_Name == student.first_Name && student.last_Name){
-			cout << "Enter new Student ID: ";
-			cin >> std_id = new_stdID;
-		}	
-		else
- 			cout << "Entered student name not in database" << endl;
-	}
-	else 
-		cout << "You have chosen to not renew password" << endl;
+    int answer = 0;
+    int new_stdID;
+    cout << "\nWelcome to the Lost Password Page";
+    cout << "Would you like to renew Student ID: ";
+    cout << "\n 1. Yes";
+    cout << "\n 2. No";
+    cin >> answer;
+    if (answer == 1){
+        cout << "You have chosen to renew Student ID" << endl;
+        cout << "Please Enter Student Last and First Name" << endl;
+        cout << "\n First Name: ";
+        cin >> first_name;
+        cout << "\n Last Name: ";
+        cin >> last_name;
+        if (first_name && last_name == first_name && last_name){
+            cout << "Enter new Student ID: ";
+            std_id = new_stdID;
+        }
+        else
+            cout << "Entered student name not in database" << endl;
+    }
+    else
+        cout << "You have chosen to not renew password" << endl;
 }
 int main() {
     Accounts info;
